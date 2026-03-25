@@ -1,143 +1,105 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>GameFlix Background</title>
-
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-body{
-  background:#000;
-  color:#fff;
-  font-family:Arial, Helvetica, sans-serif;
-  min-height:200vh; /* permite scroll do site */
-}
-
-/* ===== PARALLAX FUNDO ===== */
-
-.scene{
-  position:fixed;
-  inset:0;
-  perspective:1600px;
-  overflow:hidden;
-  z-index:-1;
-}
-
-.grid{
-  position:absolute;
-  width:400%;
-  height:400%;
-  top:-150%;
-  left:-150%;
-
-  background-image:url("paralax.png");
-  background-size:420px auto;
-  background-repeat:repeat;
-
-  transform: rotateX(20deg) rotateY(-15deg);
-  animation: moveGrid 80s linear infinite;
-  filter: brightness(.75);
-}
-
-.grid.back{
-  transform: rotateX(20deg) rotateY(-15deg) translateZ(-300px);
-  filter: blur(6px) brightness(.45);
-  animation-duration:120s;
-}
-
-.grid.mid{
-  transform: rotateX(20deg) rotateY(-15deg) translateZ(-120px);
-  filter: blur(2px) brightness(.65);
-  animation-duration:100s;
-}
-
-.grid.front{
-  transform: rotateX(20deg) rotateY(-15deg) translateZ(0);
-  animation-duration:80s;
-}
-
-@keyframes moveGrid{
-  from{
-    transform: rotateX(20deg) rotateY(-15deg) translate3d(0,0,0);
-  }
-  to{
-    transform: rotateX(20deg) rotateY(-15deg) translate3d(-1200px,-600px,0);
-  }
-}
-
-/* luz */
-.light{
-  position:absolute;
-  inset:0;
-  background:
-  radial-gradient(circle at 30% 40%, rgba(255,255,255,.08), transparent 40%),
-  radial-gradient(circle at 70% 60%, rgba(255,255,255,.05), transparent 45%);
-  animation: lightMove 25s linear infinite alternate;
-}
-
-@keyframes lightMove{
-  from{ transform: translateX(-6%); }
-  to{ transform: translateX(6%); }
-}
-
-/* overlay */
-.overlay{
-  position:absolute;
-  inset:0;
-  background:
-  radial-gradient(circle at center, transparent 30%, black 85%),
-  linear-gradient(to bottom, rgba(0,0,0,.6), rgba(0,0,0,.95));
-}
-
-/* ===== CONTEÚDO EXEMPLO ===== */
-
-.container{
-  position:relative;
-  z-index:2;
-  padding:80px;
-}
-
-.title{
-  font-size:48px;
-  font-weight:bold;
-  margin-bottom:20px;
-}
-
-.card{
-  width:260px;
-  height:150px;
-  background:#111;
-  border-radius:10px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin-top:20px;
-  border:1px solid #333;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAMEFLIX - Oferta Exclusiva e Temporária</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'gameflix-green': '#00E676',
+                        'gameflix-dark': '#0A0A0A',
+                        'gameflix-card': '#141414',
+                    },
+                    boxShadow: {
+                        'green-neon': '0 0 20px rgba(0, 230, 118, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Animação suave para o botão de compra */
+        @keyframes pulse-green {
+            0%, 100% {
+                box-shadow: 0 0 15px rgba(0, 230, 118, 0.4);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(0, 230, 118, 0.7);
+                transform: scale(1.03);
+            }
+        }
+        .btn-pulse {
+            animation: pulse-green 2s infinite;
+        }
+    </style>
 </head>
+<body class="bg-gameflix-dark text-white font-sans antialiased">
 
-<body>
+    <div class="min-h-screen flex flex-col items-center p-4 md:p-8">
 
-<!-- FUNDO -->
-<div class="scene">
-  <div class="grid back"></div>
-  <div class="grid mid"></div>
-  <div class="grid front"></div>
-  <div class="light"></div>
-  <div class="overlay"></div>
-</div>
+        <header class="w-full max-w-7xl flex justify-between items-center py-4 border-b border-gray-800 mb-8">
+            <div class="flex items-center gap-2">
+                <span class="w-3 h-3 bg-red-600 rounded-full animate-pulse"></span>
+                <span class="text-xs text-gray-400 uppercase tracking-widest font-bold">Aguardando Sincronização Final</span>
+            </div>
+            <img src="https://res.cloudinary.com/dlt1gqwnc/image/upload/v1771951448/Banner_Horizontal_Black_Friday_Vibrante_Preto_e_Vermelho_2_lhgsn0.png" alt="Logo Gameflix" class="h-6 opacity-60">
+        </header>
 
-<!-- CONTEÚDO DO SITE (seu app fica aqui) -->
-<div class="container">
-  <div class="title">GAMEFLIX</div>
-  <div class="card">Seu app aqui</div>
-</div>
+        <main class="w-full max-w-4xl flex flex-col items-center text-center flex-grow justify-center">
+
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white leading-tight tracking-tighter mb-4">
+                <span class="text-gameflix-green">ESPERA!</span> Não feche esta janela agora...
+            </h1>
+            <p class="text-gray-300 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed">
+                Nossa equipe está configurando seu acesso básico. Enquanto isso, preparei uma <strong class="text-white">oportunidade única</strong> para você não ficar limitado. <strong class="text-gameflix-green">Assista ao vídeo curto (60s) abaixo:</strong>
+            </p>
+
+            <div class="w-full aspect-video bg-gameflix-card rounded-2xl shadow-2xl border border-gray-800/50 p-2 backdrop-blur-sm relative overflow-hidden group mb-12">
+                
+                <iframe 
+                    class="w-full h-full rounded-xl"
+                    src="https://res.cloudinary.com/dlt1gqwnc/video/upload/v1771734264/red_dead_2_hsqfm7.mp4" 
+                    frameborder="0" 
+                    allow="autoplay; fullscreen; picture-in-picture" 
+                    allowfullscreen
+                    title="Seu Vídeo de VSL"
+                ></iframe>
+
+                <div class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center gap-3 z-10 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none">
+                    <div class="w-12 h-12 border-4 border-t-gameflix-green border-gray-700 rounded-full animate-spin"></div>
+                    <p class="text-sm text-gray-500 italic">Sincronizando biblioteca (85%)...</p>
+                </div>
+            </div>
+
+            <div class="w-full max-w-xl bg-gameflix-card p-6 md:p-8 rounded-2xl shadow-green-neon border border-gameflix-green/30 flex flex-col items-center gap-6 mb-16">
+                
+                <div class="text-center">
+                    <p class="text-xs text-gray-500 uppercase tracking-widest font-bold mb-1">Última chance de garantir</p>
+                    <h2 class="text-3xl md:text-4xl font-black text-white leading-none">O CATÁLOGO COMPLETO</h2>
+                    <p class="text-xl md:text-2xl mt-1 text-gameflix-green font-extrabold">Por apenas + R$ 129,90</p>
+                </div>
+
+                <a href="URL_DE_PAGAMENTO_UPGRADE" class="w-full btn-pulse bg-gameflix-green text-black font-black text-xl md:text-2xl py-5 px-10 rounded-full transition-all text-center uppercase tracking-tighter hover:bg-white">
+                    ADICIONAR ISSO AGORA AO MEU ACESSO!
+                </a>
+
+                <a href="URL_DA_PROXIMA_PAGINA_OU_ENTREGA" class="text-gray-500 hover:text-gray-300 transition-colors text-sm underline">
+                    Não, prefiro continuar com o acesso limitado e pagar o preço cheio depois.
+                </a>
+            </div>
+
+        </main>
+
+        <footer class="w-full max-w-7xl text-center py-6 border-t border-gray-800 text-gray-600 text-xs">
+            © 2024 Gameflix Brasil. Todos os direitos reservados. Este é um upgrade opcional pós-venda.
+        </footer>
+
+    </div>
 
 </body>
 </html>
