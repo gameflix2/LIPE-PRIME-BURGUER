@@ -290,6 +290,20 @@ body {
     font-size: 0.7rem;
     opacity: 0.6;
 }
+/* --- ADICIONE ISSO NO SEU CSS --- */
+
+.cardImgPro {
+    height: 250px;           /* Define a altura da imagem */
+    background-size: cover;  /* Faz a imagem preencher o espaço sem distorcer */
+    background-position: center;
+    filter: brightness(80%);
+    transition: 0.5s;
+    width: 100%;             /* Garante que ocupe toda a largura */
+}
+
+.cardPro:hover .cardImgPro {
+    filter: brightness(100%);
+}
 
 /* --- RESPONSIVIDADE (PARA CELULAR) --- */
 @media (max-width: 768px) {
