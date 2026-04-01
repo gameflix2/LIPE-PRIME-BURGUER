@@ -1,0 +1,330 @@
+/* --- RESET E BASES PRO --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* Rolagem suave */
+}
+
+:root {
+    --bg-dark: #0a0a0a;    /* Preto quase absoluto */
+    --bg-card: #141414;    /* Cinza muito escuro para contraste */
+    --text-main: #e0e0e0;  /* Cinza claro para leitura */
+    --text-bold: #ffffff;  /* Branco puro */
+    --primaryPro: #d4a373; /* Dourado/Cobre Envelhecido Pro */
+    --primary-hover: #bda07b;
+    --font-title: 'Oswald', sans-serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 25px;
+}
+
+/* --- HEADER PRO --- */
+.headerPro {
+    background: rgba(10, 10, 10, 0.95); /* Semi-transparente */
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #222; /* Linha sutil */
+    backdrop-filter: blur(5px); /* Efeito de vidro borrado */
+}
+
+.headerPro nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoPro {
+    font-family: var(--font-title);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: var(--text-bold);
+}
+
+.logoPro .detail {
+    color: var(--primaryPro);
+    margin-left: 2px;
+}
+
+.navLinks {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.navLinks a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 400;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.navLinks a:hover {
+    color: var(--primaryPro);
+}
+
+/* --- BOTÕES PRO --- */
+.btnPro {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: var(--font-title);
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 2px; /* Cantos mais retos, mais agressivos */
+    transition: 0.3s all ease;
+}
+
+.btnDestaque {
+    padding: 10px 20px;
+    background: transparent;
+    border: 1px solid var(--primaryPro);
+    color: var(--primaryPro);
+    font-size: 0.85rem;
+}
+
+.btnDestaque:hover {
+    background: var(--primaryPro);
+    color: #000;
+}
+
+.btnPrincipal {
+    padding: 15px 35px;
+    background: var(--primaryPro);
+    color: #000;
+    font-size: 1.1rem;
+    border: none;
+}
+
+.btnPrincipal:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+/* --- HERO PRO --- */
+.heroPro {
+    background-image: url('https://images.stockcake.com/public/d/d/0/dd0bc0a2-5189-4e19-8f7c-a5ef21889673/dramatic-gothic-burger-stockcake.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efeito Parallax */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-top: 80px; /* Desconto do header */
+}
+
+.heroOverlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.9) 30%, rgba(0,0,0,0.3));
+}
+
+.heroContent {
+    position: relative;
+    z-index: 10;
+    max-width: 650px;
+}
+
+.titlePro {
+    font-family: var(--font-title);
+    font-size: 5rem;
+    line-height: 0.95;
+    color: var(--text-bold);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.fomePro {
+    color: var(--primaryPro);
+}
+
+.subtitlePro {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    opacity: 0.8;
+}
+
+/* --- SOBRE PRO --- */
+.sobrePro {
+    padding: 100px 0;
+    background: var(--bg-card);
+}
+
+.gridSobre {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.sobreImg img {
+    width: 100%;
+    border-radius: 4px;
+    filter: grayscale(30%);
+}
+
+.sobreTexto h2 {
+    font-family: var(--font-title);
+    font-size: 3rem;
+    color: var(--text-bold);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* --- MENU PRO --- */
+.menuPro {
+    padding: 100px 0;
+}
+
+.sectionTitlePro {
+    font-family: var(--font-title);
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: var(--text-bold);
+    text-align: center;
+    margin-bottom: 60px;
+    letter-spacing: -1px;
+}
+
+.gridMenuPro {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.cardPro {
+    background: var(--bg-card);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: 0.3s;
+    border: 1px solid #1a1a1a;
+    position: relative;
+}
+
+.cardPro:hover {
+    transform: translateY(-5px);
+    border-color: var(--primaryPro);
+}
+
+.cardTag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--primaryPro);
+    color: #000;
+    padding: 5px 10px;
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    z-index: 5;
+}
+
+.cardImgPro {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(80%);
+    transition: 0.5s;
+}
+
+.cardPro:hover .cardImgPro {
+    filter: brightness(100%);
+}
+
+.cardInfo {
+    padding: 25px;
+}
+
+.cardInfo h3 {
+    font-family: var(--font-title);
+    font-size: 1.8rem;
+    color: var(--text-bold);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.cardInfo p {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    min-height: 70px; /* Alinha os cards */
+}
+
+.cardFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #222;
+    padding-top: 15px;
+}
+
+.pricePro {
+    font-family: var(--font-title);
+    font-size: 2rem;
+    color: var(--primaryPro);
+    font-weight: 700;
+}
+
+.btnAdd {
+    text-decoration: none;
+    background: transparent;
+    border: 1px solid #333;
+    color: var(--text-main);
+    width: 40px; height: 40px;
+    display: flex; justify-content: center; align-items: center;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.btnAdd:hover {
+    background: var(--text-bold);
+    color: #000;
+    border-color: var(--text-bold);
+}
+
+/* --- FOOTER PRO --- */
+.footerPro {
+    background: #000;
+    padding: 50px 0;
+    text-align: center;
+    border-top: 1px solid #1a1a1a;
+    font-size: 0.8rem;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.endereco {
+    margin-top: 10px;
+    font-size: 0.7rem;
+    opacity: 0.6;
+}
+
+/* --- RESPONSIVIDADE (PARA CELULAR) --- */
+@media (max-width: 768px) {
+    .titlePro { font-size: 3rem; }
+    .heroPro { background-attachment: scroll; } /* Desativa parallax no mobile */
+    .gridSobre { grid-template-columns: 1fr; text-align: center; }
+    .navLinks { display: none; } /* Simples para este exemplo, precisaria de JS para menu burger */
+}
