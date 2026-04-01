@@ -1,105 +1,99 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAMEFLIX - Oferta Exclusiva e Temporária</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'gameflix-green': '#00E676',
-                        'gameflix-dark': '#0A0A0A',
-                        'gameflix-card': '#141414',
-                    },
-                    boxShadow: {
-                        'green-neon': '0 0 20px rgba(0, 230, 118, 0.4)',
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        /* Animação suave para o botão de compra */
-        @keyframes pulse-green {
-            0%, 100% {
-                box-shadow: 0 0 15px rgba(0, 230, 118, 0.4);
-                transform: scale(1);
-            }
-            50% {
-                box-shadow: 0 0 30px rgba(0, 230, 118, 0.7);
-                transform: scale(1.03);
-            }
-        }
-        .btn-pulse {
-            animation: pulse-green 2s infinite;
-        }
-    </style>
+    <title>Hamburgueria Prime | The Art of Burger</title>
+    <link href="https://st4.depositphotos.com/1020618/23910/i/450/depositphotos_239107218-stock-photo-tasty-burger-with-french-fries.jpg" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gameflix-dark text-white font-sans antialiased">
+<body>
 
-    <div class="min-h-screen flex flex-col items-center p-4 md:p-8">
+    <header class="headerPro">
+        <nav class="container">
+            <div class="logoPro">LIPE PRIME BURGUER<span class="detail">/</span></div>
+            <ul class="navLinks">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#sobre">Nossa Arte</a></li>
+                <li><a href="#menu">Cardápio</a></li>
+            </ul>
+            <a href="https://wa.me/seu-numero" class="btnPro btnDestaque">Peça pelo WhatsApp</a>
+        </nav>
+    </header>
 
-        <header class="w-full max-w-7xl flex justify-between items-center py-4 border-b border-gray-800 mb-8">
-            <div class="flex items-center gap-2">
-                <span class="w-3 h-3 bg-red-600 rounded-full animate-pulse"></span>
-                <span class="text-xs text-gray-400 uppercase tracking-widest font-bold">Aguardando Sincronização Final</span>
+    <section id="home" class="heroPro">
+        <div class="heroOverlay"></div>
+        <div class="container heroContent">
+            <h1 class="titlePro">Respeite <br>sua <span class="fomePro">Fome.</span></h1>
+            <p class="subtitlePro">Blend exclusivo de Angus, pão artesanal selado na manteiga e ingredientes premium. Isso não é um lanche, é uma experiência.</p>
+            <a href="#menu" class="btnPro btnPrincipal">Explorar Cardápio</a>
+        </div>
+    </section>
+
+    <section id="sobre" class="sobrePro">
+        <div class="container gridSobre">
+            <div class="sobreImg">
+                <img src="https://img.freepik.com/fotos-premium/um-hamburguer-esta-numa-grelha-com-um-fogo-atras-dele_1170794-406821.jpg?semt=ais_hybrid&w=740&q=80" alt="Fogo na grelha">
             </div>
-            <img src="https://res.cloudinary.com/dlt1gqwnc/image/upload/v1771951448/Banner_Horizontal_Black_Friday_Vibrante_Preto_e_Vermelho_2_lhgsn0.png" alt="Logo Gameflix" class="h-6 opacity-60">
-        </header>
+            <div class="sobreTexto">
+                <h2>O Segredo da Grelha</h2>
+                <p>Na Prime, não aceitamos atalhos. Nossa carne é moída diariamente, nunca congelada. Usamos apenas lenha certificada para garantir aquele sabor defumado inconfundível. Cada hambúrguer é moldado à mão e grelhado na perfeição, respeitando o ponto da carne.</p>
+            </div>
+        </div>
+    </section>
 
-        <main class="w-full max-w-4xl flex flex-col items-center text-center flex-grow justify-center">
-
-            <h1 class="text-3xl md:text-5xl font-extrabold text-white leading-tight tracking-tighter mb-4">
-                <span class="text-gameflix-green">ESPERA!</span> Não feche esta janela agora...
-            </h1>
-            <p class="text-gray-300 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed">
-                Nossa equipe está configurando seu acesso básico. Enquanto isso, preparei uma <strong class="text-white">oportunidade única</strong> para você não ficar limitado. <strong class="text-gameflix-green">Assista ao vídeo curto (60s) abaixo:</strong>
-            </p>
-
-            <div class="w-full aspect-video bg-gameflix-card rounded-2xl shadow-2xl border border-gray-800/50 p-2 backdrop-blur-sm relative overflow-hidden group mb-12">
+    <section id="menu" class="menuPro">
+        <div class="container">
+            <h2 class="sectionTitlePro">Assinaturas Prime</h2>
+            <div class="gridMenuPro">
                 
-                <iframe 
-                    class="w-full h-full rounded-xl"
-                    src="https://res.cloudinary.com/dlt1gqwnc/video/upload/v1771734264/red_dead_2_hsqfm7.mp4" 
-                    frameborder="0" 
-                    allow="autoplay; fullscreen; picture-in-picture" 
-                    allowfullscreen
-                    title="Seu Vídeo de VSL"
-                ></iframe>
-
-                <div class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center gap-3 z-10 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none">
-                    <div class="w-12 h-12 border-4 border-t-gameflix-green border-gray-700 rounded-full animate-spin"></div>
-                    <p class="text-sm text-gray-500 italic">Sincronizando biblioteca (85%)...</p>
-                </div>
-            </div>
-
-            <div class="w-full max-w-xl bg-gameflix-card p-6 md:p-8 rounded-2xl shadow-green-neon border border-gameflix-green/30 flex flex-col items-center gap-6 mb-16">
-                
-                <div class="text-center">
-                    <p class="text-xs text-gray-500 uppercase tracking-widest font-bold mb-1">Última chance de garantir</p>
-                    <h2 class="text-3xl md:text-4xl font-black text-white leading-none">O CATÁLOGO COMPLETO</h2>
-                    <p class="text-xl md:text-2xl mt-1 text-gameflix-green font-extrabold">Por apenas + R$ 129,90</p>
+                <div class="cardPro">
+                    <div class="cardTag">BEST SELLER</div>
+                    <div class="cardImgPro" style="background-image: url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=500')"></div>
+                    <div class="cardInfo">
+                        <h3>O Monarca</h3>
+                        <p>Blend Angus 200g, Cheddar Inglês maturado, Bacon Caramelizado no Bourbon, Cebola Crispy e Maionese de Trufas Pretas.</p>
+                        <div class="cardFooter">
+                            <span class="pricePro">R$ 49</span>
+                            <a href="#" class="btnAdd">+</a>
+                        </div>
+                    </div>
                 </div>
 
-                <a href="URL_DE_PAGAMENTO_UPGRADE" class="w-full btn-pulse bg-gameflix-green text-black font-black text-xl md:text-2xl py-5 px-10 rounded-full transition-all text-center uppercase tracking-tighter hover:bg-white">
-                    ADICIONAR ISSO AGORA AO MEU ACESSO!
-                </a>
+                <div class="cardPro">
+                    <div class="cardImgPro" style="background-image: url('https://images.unsplash.com/photo-1553979459-d2229ba7433b?q=80&w=500')"></div>
+                    <div class="cardInfo">
+                        <h3>Black Bacon</h3>
+                        <p>Pão Australiano, Blend 180g, Queijo Prato, Dobro de Bacon Crocante e Molho Barbecue Artesanal.</p>
+                        <div class="cardFooter">
+                            <span class="pricePro">R$ 42</span>
+                            <a href="#" class="btnAdd">+</a>
+                        </div>
+                    </div>
+                </div>
 
-                <a href="URL_DA_PROXIMA_PAGINA_OU_ENTREGA" class="text-gray-500 hover:text-gray-300 transition-colors text-sm underline">
-                    Não, prefiro continuar com o acesso limitado e pagar o preço cheio depois.
-                </a>
+                <div class="cardPro">
+                    <div class="cardImgPro" style="background-image: url('https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?q=80&w=500')"></div>
+                    <div class="cardInfo">
+                        <h3>Smash Inferno</h3>
+                        <p>2x Ultra-Smash 90g, Queijo Americano, Picles da Casa, Cebola Roxa e Maionese Picante de Habanero.</p>
+                        <div class="cardFooter">
+                            <span class="pricePro">R$ 37</span>
+                            <a href="#" class="btnAdd">+</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+        </div>
+    </section>
 
-        </main>
-
-        <footer class="w-full max-w-7xl text-center py-6 border-t border-gray-800 text-gray-600 text-xs">
-            © 2024 Gameflix Brasil. Todos os direitos reservados. Este é um upgrade opcional pós-venda.
-        </footer>
-
-    </div>
+    <footer class="footerPro">
+        <div class="container">
+            <p>HAMBURGUERIA PRIME @ 2026</p>
+            <p class="endereco">Rua dos Grelhados, 1000 - Centro - Canguçu/RS</p>
+        </div>
+    </footer>
 
 </body>
 </html>
